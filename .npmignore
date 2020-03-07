@@ -1,0 +1,7 @@
+*
+!build
+!build/cli.js
+!CHANGELOG.md
+!package.json
+!README.md
+!yarn.lock
