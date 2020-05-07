@@ -1,5 +1,6 @@
-import ConvertJavaTextureToBedrock, {
+import {
     ConsoleLog,
+    ConvertJavaTextureToBedrock,
     Input,
     LocalFileInputEntry,
     LocalFileOutput,
@@ -7,7 +8,7 @@ import ConvertJavaTextureToBedrock, {
     LocalFolderOutput,
     SilentLog
 } from "@ozelot379/convert-minecraft-java-texture-to-bedrock";
-import fs from "fs-extra";
+import fs from "fs";
 import PACKAGE from "./../package";
 import yargs from "yargs";
 
@@ -44,8 +45,8 @@ import yargs from "yargs";
         .argv;
 
     try {
-        return new ConvertJavaTextureToBedrock(
-            new Input(fs.statSync(argv.input).isDirectory() ? new LocalFolderInputEntry(argv.input) : new LocalFileInputEntry(argv.input)),
+        await new ConvertJavaTextureToBedrock(
+            new Input((await fs.promises.stat(argv.input)).isDirectory() ? new LocalFolderInputEntry(argv.input) : new LocalFileInputEntry(argv.input)),
             (argv.output.includes(".") ? new LocalFileOutput(argv.output) : new LocalFolderOutput(argv.output)),
             (argv.log ? new ConsoleLog() : new SilentLog()),
             {
