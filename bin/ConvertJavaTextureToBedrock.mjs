@@ -1,3 +1,4 @@
+#!/usr/bin/env node
 import {
     ConsoleLog,
     ConvertJavaTextureToBedrock,
@@ -9,10 +10,11 @@ import {
     SilentLog
 } from "@ozelot379/convert-minecraft-java-texture-to-bedrock";
 import fs from "fs";
-import PACKAGE from "./../package";
 import yargs from "yargs";
 
 (async () => {
+    const PACKAGE = JSON.parse(await fs.promises.readFile("./package.json", "utf8"));
+
     const argv = yargs(process.argv)
         .options({
             i: {
