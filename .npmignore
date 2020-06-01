@@ -1,7 +1,4 @@
-*
-!build
-!build/cli.js
-!CHANGELOG.md
-!package.json
-!README.md
-!yarn.lock
+.idea
+build
+node_modules
+*.log
