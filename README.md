@@ -8,9 +8,7 @@ THIS PROJECT IS NO OFFICIAL MINECRAFT PRODUCT - NOT AUTHORIZED OR ASSOCIATED BY 
 Look at https://github.com/ozelot379/ConvertJavaTextureToBedrock#user-content-description
 
 ## CLI
-First be sure you have installed [NodeJS](https://nodejs.org) (At least the LTS version) and install [Yarn](https://yarnpkg.com/en/docs/install)
-
-Then install this global so you can use the binary
+Install it global so you can use the binary
 
 ```bash
 yarn global add @ozelot379/convert-minecraft-java-texture-to-bedrock-cli
