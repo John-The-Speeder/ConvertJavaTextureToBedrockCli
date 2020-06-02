@@ -23,7 +23,7 @@
   },
   "homepage": "https://github.com/ozelot379/ConvertJavaTextureToBedrock#readme",
   "dependencies": {
-    "@ozelot379/convert-minecraft-java-texture-to-bedrock": "3.3.4",
+    "@ozelot379/convert-minecraft-java-texture-to-bedrock": "3.4.0",
     "yargs": "14.2.2"
   },
   "devDependencies": {},
