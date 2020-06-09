@@ -14,7 +14,9 @@ This is an "ES module"
 
 So it requires NodeJS v14
 
-Only tested with Linux, but could work on Windows/macOS too
+If you need older support, please try to use something like `webpack` or `babel`
+
+Only tested with Linux
 
 ## CLI
 
