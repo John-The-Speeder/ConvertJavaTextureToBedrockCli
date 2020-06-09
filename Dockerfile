@@ -1,5 +1,11 @@
 FROM node:14
 
-RUN yarn global add @ozelot379/convert-minecraft-java-texture-to-bedrock-cli
+COPY . /app
 
-ENTRYPOINT ["ConvertJavaTextureToBedrock"]
+WORKDIR /app
+
+RUN if [ ! -e "./node_modules" ]; then yarn; fi
+
+WORKDIR bin
+
+ENTRYPOINT ["./ConvertJavaTextureToBedrock.mjs"]
