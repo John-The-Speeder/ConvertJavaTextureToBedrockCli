@@ -1,10 +1,10 @@
-FROM node:14
+FROM node:14-alpine
 
 COPY . /app
 
 WORKDIR /app
 
-RUN if [ ! -e "./node_modules" ]; then yarn; fi
+RUN yarn
 
 WORKDIR bin
 
