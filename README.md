@@ -29,7 +29,7 @@ yarn global add @ozelot379/convert-minecraft-java-texture-to-bedrock-cli
 You can now convert your texture packs like
 
 ```bash
-ConvertJavaTextureToBedrock -i input/java_texture_pack.zip -o output/bedrock_texture_pack.mcpack
+ConvertJavaTextureToBedrock -i /path/to/your/input/java_texture_pack.zip -o /path/to/your/output/bedrock_texture_pack.mcpack
 ```
 
 | Parameter | Description |
@@ -38,6 +38,14 @@ ConvertJavaTextureToBedrock -i input/java_texture_pack.zip -o output/bedrock_tex
 | -o (Required) | Output folder or zip path |
 | -l | Show log (Default) |
 | -e | Enable experimental conversions (No default) |
+
+### Docker
+
+You can also use the CLI with Docker like
+
+```bash
+docker run --rm -v /path/to/your/input/java_texture_pack.zip:/java_texture_pack.zip:ro -v /path/to/your/output/bedrock_texture_pack.mcpack:/bedrock_texture_pack.mcpack ozelot379/convert-minecraft-java-texture-to-bedrock-cli -i /java_texture_pack.zip -o /bedrock_texture_pack.mcpack
+```
 
 ## Web app
 
