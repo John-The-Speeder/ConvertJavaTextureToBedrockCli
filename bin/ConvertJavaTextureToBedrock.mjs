@@ -10,10 +10,12 @@ import {
     SilentLog
 } from "@ozelot379/convert-minecraft-java-texture-to-bedrock";
 import fs from "fs";
+import path from "path";
 import yargs from "yargs";
 
 (async () => {
-    const PACKAGE = JSON.parse(await fs.promises.readFile("./package.json", "utf8"));
+    const base = path.dirname(import.meta.url).replace(/^file:\/\//, "");
+    const PACKAGE = JSON.parse(await fs.promises.readFile(`${base}/../package.json`, "utf8"));
 
     const argv = yargs(process.argv)
         .options({
