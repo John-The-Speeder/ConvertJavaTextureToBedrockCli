@@ -44,8 +44,12 @@ ConvertJavaTextureToBedrock -i /path/to/your/input/java_texture_pack.zip -o /pat
 You can also use the CLI with Docker like
 
 ```bash
-docker run --rm -v /path/to/your/input/java_texture_pack.zip:/java_texture_pack.zip:ro -v /path/to/your/output/bedrock_texture_pack.mcpack:/bedrock_texture_pack.mcpack ozelot379/convert-minecraft-java-texture-to-bedrock-cli -i /java_texture_pack.zip -o /bedrock_texture_pack.mcpack
+docker run --rm -v /path/to/your/input:/input:ro -v /path/to/your/output:/output ozelot379/convert-minecraft-java-texture-to-bedrock-cli -i /input/java_texture_pack.zip -o /output/bedrock_texture_pack.mcpack
 ```
+
+You need to add your input and output as volumes for access inside container
+
+Look at https://hub.docker.com/r/ozelot379/convert-minecraft-java-texture-to-bedrock-cli
 
 ## Web app
 
