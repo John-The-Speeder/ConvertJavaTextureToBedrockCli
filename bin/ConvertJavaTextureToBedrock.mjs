@@ -9,15 +9,19 @@ import {
     LocalFolderOutput,
     SilentLog
 } from "@ozelot379/convert-minecraft-java-texture-to-bedrock";
-import fs from "fs";
-import path from "path";
+import {dirname, join} from "path";
+import {fileURLToPath} from "url";
+import {readFile, stat} from "fs/promises";
 import yargs from "yargs";
 
-(async () => {
-    const base = path.dirname(import.meta.url).replace(/^file:\/\//, "");
-    const PACKAGE = JSON.parse(await fs.promises.readFile(`${base}/../package.json`, "utf8"));
+const {argv, exit} = process;
 
-    const argv = yargs(process.argv)
+const __dirname = dirname(fileURLToPath(import.meta.url));
+
+(async () => {
+    const PACKAGE = JSON.parse(await readFile(join(__dirname, "..", "package.json"), "utf8"));
+
+    const argv = yargs(argv)
         .options({
             i: {
                 alias: "input",
@@ -50,7 +54,7 @@ import yargs from "yargs";
 
     try {
         await new ConvertJavaTextureToBedrock(
-            new Input((await fs.promises.stat(argv.input)).isDirectory() ? new LocalFolderInputEntry(argv.input) : new LocalFileInputEntry(argv.input)),
+            new Input((await stat(argv.input)).isDirectory() ? new LocalFolderInputEntry(argv.input) : new LocalFileInputEntry(argv.input)),
             (argv.output.includes(".") ? new LocalFileOutput(argv.output) : new LocalFolderOutput(argv.output)),
             (argv.log ? new ConsoleLog() : new SilentLog()),
             {
@@ -60,6 +64,6 @@ import yargs from "yargs";
     } catch (err) {
         console.error(err.message);
 
-        process.exit(1);
+        exit(1);
     }
 })();
