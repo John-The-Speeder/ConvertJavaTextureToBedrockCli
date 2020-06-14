@@ -23,7 +23,7 @@
   },
   "homepage": "https://github.com/ozelot379/ConvertJavaTextureToBedrockCli#readme",
   "dependencies": {
-    "@ozelot379/convert-minecraft-java-texture-to-bedrock": "3.4.2",
+    "@ozelot379/convert-minecraft-java-texture-to-bedrock-api": "3.4.2",
     "yargs": "14.2.2"
   },
   "devDependencies": {},

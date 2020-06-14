@@ -8,7 +8,7 @@ import {
     LocalFolderInputEntry,
     LocalFolderOutput,
     SilentLog
-} from "@ozelot379/convert-minecraft-java-texture-to-bedrock";
+} from "@ozelot379/convert-minecraft-java-texture-to-bedrock-api";
 import {dirname, join} from "path";
 import {fileURLToPath} from "url";
 import {readFile, stat} from "fs/promises";
