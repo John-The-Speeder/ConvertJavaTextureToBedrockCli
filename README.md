@@ -6,7 +6,7 @@ THIS PROJECT IS NO OFFICIAL MINECRAFT PRODUCT - NOT AUTHORIZED OR ASSOCIATED BY 
 
 ## Description
 
-Look at https://github.com/ozelot379/ConvertJavaTextureToBedrock#user-content-description
+Look at https://github.com/ozelot379/ConvertJavaTextureToBedrockWebApp#user-content-description
 
 ## Requirements
 
@@ -29,7 +29,7 @@ yarn global add @ozelot379/convert-minecraft-java-texture-to-bedrock-cli
 You can now convert your texture packs like
 
 ```bash
-ConvertJavaTextureToBedrock -i /path/to/your/input/java_texture_pack.zip -o /path/to/your/output/bedrock_texture_pack.mcpack
+ConvertJavaTextureToBedrockCli -i /path/to/your/input/java_texture_pack.zip -o /path/to/your/output/bedrock_texture_pack.mcpack
 ```
 
 | Parameter | Description |
@@ -54,7 +54,7 @@ Look at https://hub.docker.com/r/ozelot379/convert-minecraft-java-texture-to-bed
 
 ## Web app
 
-Look at https://github.com/ozelot379/ConvertJavaTextureToBedrock
+Look at https://github.com/ozelot379/ConvertJavaTextureToBedrockWebApp
 
 ## API
 
@@ -62,4 +62,4 @@ Look at https://github.com/ozelot379/ConvertJavaTextureToBedrockApi
 
 ## Report issue
 
-Use github repo issues (https://github.com/ozelot379/ConvertJavaTextureToBedrock/issues/new/choose)
+Use github repo issues (https://github.com/ozelot379/ConvertJavaTextureToBedrockWebApp/issues/new/choose)

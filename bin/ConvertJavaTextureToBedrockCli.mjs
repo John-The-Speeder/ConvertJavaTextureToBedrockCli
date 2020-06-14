@@ -1,7 +1,7 @@
 #!/usr/bin/env node
 import {
     ConsoleLog,
-    ConvertJavaTextureToBedrock,
+    ConvertJavaTextureToBedrockApi,
     Input,
     LocalFileInputEntry,
     LocalFileOutput,
@@ -53,7 +53,7 @@ const __dirname = dirname(fileURLToPath(import.meta.url));
         .argv;
 
     try {
-        await new ConvertJavaTextureToBedrock(
+        await new ConvertJavaTextureToBedrockApi(
             new Input((await stat(argv.input)).isDirectory() ? new LocalFolderInputEntry(argv.input) : new LocalFileInputEntry(argv.input)),
             (argv.output.includes(".") ? new LocalFileOutput(argv.output) : new LocalFolderOutput(argv.output)),
             (argv.log ? new ConsoleLog() : new SilentLog()),
