@@ -21,7 +21,7 @@ const __dirname = dirname(fileURLToPath(import.meta.url));
 (async () => {
     const PACKAGE = JSON.parse(await readFile(join(__dirname, "..", "package.json"), "utf8"));
 
-    const argv = yargs(argv)
+    const args = yargs(argv)
         .options({
             i: {
                 alias: "input",
@@ -54,11 +54,11 @@ const __dirname = dirname(fileURLToPath(import.meta.url));
 
     try {
         await new ConvertJavaTextureToBedrockApi(
-            new Input((await stat(argv.input)).isDirectory() ? new LocalFolderInputEntry(argv.input) : new LocalFileInputEntry(argv.input)),
-            (argv.output.includes(".") ? new LocalFileOutput(argv.output) : new LocalFolderOutput(argv.output)),
-            (argv.log ? new ConsoleLog() : new SilentLog()),
+            new Input((await stat(args.input)).isDirectory() ? new LocalFolderInputEntry(args.input) : new LocalFileInputEntry(args.input)),
+            (args.output.includes(".") ? new LocalFileOutput(args.output) : new LocalFolderOutput(args.output)),
+            (args.log ? new ConsoleLog() : new SilentLog()),
             {
-                experimental: argv.experimental
+                experimental: args.experimental
             }
         ).convert();
     } catch (err) {
