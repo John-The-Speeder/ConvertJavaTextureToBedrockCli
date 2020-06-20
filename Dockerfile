@@ -7,4 +7,4 @@ ENV NODE_ENV production
 RUN yarn
 
 WORKDIR bin
-ENTRYPOINT ["./ConvertJavaTextureToBedrock.mjs"]
+ENTRYPOINT ["./ConvertJavaTextureToBedrockCli.mjs"]
