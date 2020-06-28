@@ -2,7 +2,7 @@
   "name": "@ozelot379/convert-minecraft-java-texture-to-bedrock-cli",
   "type": "module",
   "productName": "ConvertJavaTextureToBedrockCli",
-  "version": "3.6.0",
+  "version": "3.6.1",
   "description": "CLI for convert Minecraft Java texture packs to Bedrock texture packs",
   "keywords": [
     "Minecraft",
@@ -23,7 +23,7 @@
   },
   "homepage": "https://github.com/ozelot379/ConvertJavaTextureToBedrockCli#readme",
   "dependencies": {
-    "@ozelot379/convert-minecraft-java-texture-to-bedrock-api": "3.6.0",
+    "@ozelot379/convert-minecraft-java-texture-to-bedrock-api": "3.6.1",
     "yargs": "14.2.2"
   },
   "devDependencies": {},
